@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change color and shape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="outerDiv">
+            <div class="innerDiv"></div>
+        </div>
+        <div class="buttons">
+            <button class="change-color">Change Color</button>
+            <button class="change-shape">Change shape</button>
+
+        </div>
+    </div>
+    <script>
+        let circleDiv = document.getElementsByClassName("outerDiv");
+        let shape = document.getElementsByClassName("innerDiv");
+        let changeColorBtn = document.getElementsByClassName("change-color");
+        let changeShapeBtn = document.getElementsByClassName("change-shape");
+
+        function changeShape(){
+            let shapes = ["triangle", "square", "rectangle", "circle", "diamond"];
+            let randomIndex = Math.floor(Math.random()*(shapes.length-1));
+            
+            let classes = shape.classList;
+            
+            classes.forEach( (item) => {
+                if(shapes.includes(item) == true)
+                {
+                    shape.classList.remove(item)
+                } 
+            })
+            shape.classList.add(shapes[randomIndex]);
+        }
+        
+        function changeColor(){
+            let colors = ['#FF5733', '#33FF57', '#3357FF', '#57FF33', '#5733FF', '#33FFBE', '#FF33BE', '#BEFF33', '#BE33FF', '#FFBE33'];
+            let randomIndex = Math.floor(Math.random()*(colors.length-1));
+            circleDiv.style.backgroundColor = colors[randomIndex];
+        }
+        changeColorBtn.addEventListener("click", changeColor);
+        changeShapeBtn.addEventListener("click", changeShape);
+    </script>
+</body>
+</html>

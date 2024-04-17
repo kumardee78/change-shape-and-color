@@ -1,0 +1,50 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8rem;
+}
+.outerDiv{
+    position: relative;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+.innerDiv{
+    position: absolute;
+    top :50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    height: 110px;
+    width: 110px;
+    background-color: blue;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.change-color{
+    margin-bottom: 1rem;
+}
+.circle{
+    clip-path: circle(50% at 50% 50%);
+    background-color: red;
+}
+.square{
+    clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 1% 100%);
+    background-color: blue;
+}
+.triangle{
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: aliceblue;
+}
+.rectangle{
+    clip-path: polygon( 0% 0%0% 0%, 1% 48%, 0 48%, 100% 48%, 100% 48%, 100% 1%, 100% 1%);
+    background-color: brown;
+}
+.diamond{
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-color: pink;
+}
