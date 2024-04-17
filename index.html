@@ -9,7 +9,7 @@
 <body>
     <div class="wrapper">
         <div class="outerDiv">
-            <div class="innerDiv"></div>
+            <div class="innerDiv" id="innerDiv"></div>
         </div>
         <div class="buttons">
             <button class="change-color">Change Color</button>
@@ -19,13 +19,14 @@
     </div>
     <script>
         let circleDiv = document.getElementsByClassName("outerDiv");
-        let shape = document.getElementsByClassName("innerDiv");
+        let shape = document.getElementsByClassName("innerDiv")[0];
         let changeColorBtn = document.getElementsByClassName("change-color");
         let changeShapeBtn = document.getElementsByClassName("change-shape");
+        console.log(changeColorBtn[0]);
 
         function changeShape(){
             let shapes = ["triangle", "square", "rectangle", "circle", "diamond"];
-            let randomIndex = Math.floor(Math.random()*(shapes.length-1));
+            let randomIndex = Math.floor(Math.random()*(shapes.length));
             
             let classes = shape.classList;
             
@@ -35,16 +36,19 @@
                     shape.classList.remove(item)
                 } 
             })
-            shape.classList.add(shapes[randomIndex]);
+           
+            shape.classList.add(shapes[randomIndex]); 
+        
+            
         }
         
         function changeColor(){
             let colors = ['#FF5733', '#33FF57', '#3357FF', '#57FF33', '#5733FF', '#33FFBE', '#FF33BE', '#BEFF33', '#BE33FF', '#FFBE33'];
             let randomIndex = Math.floor(Math.random()*(colors.length-1));
-            circleDiv.style.backgroundColor = colors[randomIndex];
+            circleDiv[0].style.backgroundColor = colors[randomIndex];
         }
-        changeColorBtn.addEventListener("click", changeColor);
-        changeShapeBtn.addEventListener("click", changeShape);
+        changeColorBtn[0].addEventListener("click", changeColor);
+        changeShapeBtn[0].addEventListener("click", changeShape);
     </script>
 </body>
 </html>
